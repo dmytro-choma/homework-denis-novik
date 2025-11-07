@@ -191,6 +191,8 @@ nav ul li a {
 nav ul li a:hover,
 .portfolio-section article a:hover {
   color: black;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 hr {
@@ -398,4 +400,8 @@ footer .container {
   text-align: center;
   font-size: 14px;
   color: #828282;
+}
+
+footer svg:hover{
+  opacity: 0.5;
 }
