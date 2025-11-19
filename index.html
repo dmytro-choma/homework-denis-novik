@@ -5,9 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Denis Novik</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+  <link href="fonts/stylesheet.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -38,9 +36,54 @@
   </header>
   <main>
     <section class="hero-section">
-      <div class="container" id="hero">
-        <h1>Denis Novik</h1>
-        <img src="images/hero-picture.jpg" alt="Denis Novik photo">
+      <div class="container hero-container" id="hero">
+        <div class="hero-title">
+          <h1>Denis <br> Novik</h1>
+          <p>UX | UI designer <br> 24 years old, Minsk</p>
+          <ul class="lang-list">
+            <li><a href="">RU</a></li>
+            <li>|</li>
+            <li><a href="">ENG</a></li>
+          </ul>
+          <button class="menu-btn-open" type="button">
+            <svg class="burger-button-svg" width="35" height="20">
+              <use href="images/burger-menu.svg"></use>
+            </svg>
+          </button>
+          <div class="mobile-menu">
+            <ul class="mobile-menu-list">
+              <li>
+                <a class="mobile-menu-link" href="#home">Home</a>
+              </li>
+              <li>
+                <a class="mobile-menu-link" href="#about-me">About me</a>
+              </li>
+              <li>
+                <a class="mobile-menu-link" href="#skills">Skills</a>
+              </li>
+              <li>
+                <a class="mobile-menu-link" href="#portfolio">Portfolio</a>
+              </li>
+              <li>
+                <a class="mobile-menu-link" href="#contacts">Contacts</a>
+              </li>
+            </ul>
+            <ul class="lang-list-mobile">
+              <li><a href=".">RU</a></li>
+              <li>|</li>
+              <li><a href=".">ENG</a></li>
+            </ul>
+            <button type="button" class="menu-btn-close"><svg width="22" height="22">
+                <use href="images/close-btn.svg"></use>
+              </svg></button>
+          </div>
+
+        </div>
+        <picture>
+          <source srcset="images/hero-picture-mobile.jpg" media="(max-width: 375px)">
+          <source srcset="images/hero-picture.jpg" media="(min-width: 376px)">
+          <img src="images/hero-picture.jpg" alt="Denis Novik">
+        </picture>
       </div>
     </section>
     <section class="about-me-section">
@@ -152,5 +195,6 @@
     </div>
   </footer>
 </body>
+<script src="js/modal.js"></script>
 
 </html>

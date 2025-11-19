@@ -1,0 +1,14 @@
+const mobileMenu = document.querySelector('.mobile-menu');
+const menuBtnOpen = document.querySelector('.menu-btn-open');
+const menuBtnClose = document.querySelector('.menu-btn-close');
+const menuLink = document.querySelectorAll('.mobile-menu-link');
+
+const toggleMenu = () => {
+  mobileMenu.classList.toggle('is-open');
+};
+
+menuBtnOpen.addEventListener('click', toggleMenu);
+menuBtnClose.addEventListener('click', toggleMenu);
+menuLink.forEach(link => {
+  link.addEventListener('click', toggleMenu);
+});

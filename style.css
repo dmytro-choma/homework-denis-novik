@@ -3,9 +3,9 @@
    License: none (public domain)
 */
 :root {
-  --font-family: 'Open Sans', sans-serif;
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
+  --font-family: 'Gilroy', sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-bold: bold;
 }
 
 
@@ -147,16 +147,22 @@ table {
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding: 0 10px;
   font-family: var(--font-family);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--font-weight-medium);
   color: #070707;
   font-size: 18px;
 }
 
+section {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .container {
-  width: clamp(320px, 100%, 970px);
+  width: 100%;
+  max-width: 970px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -166,11 +172,10 @@ header {
   height: 80px;
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin: 0 auto 12px auto;
 }
 
 nav {
-  max-width: 500px;
   margin: 0 auto;
   margin-bottom: 25px;
   margin-top: 25px;
@@ -179,7 +184,7 @@ nav {
 nav ul {
   display: flex;
   gap: clamp(10px, 5vw, 40px);
-  justify-content: center;
+  justify-content: space-between;
 }
 
 nav ul li a {
@@ -205,12 +210,120 @@ hr {
 /* HERO */
 .hero-section {
   height: 500px;
+  margin-bottom: 100px;
 }
 
-.hero-section h1 {
+.hero-container {
+  display: grid;
+  gap: 30px;
+}
+
+.hero-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.hero-title h1 {
   font-weight: var(--font-weight-bold);
   font-size: 48px;
-  margin-bottom: 50px;
+}
+
+.lang-list {
+  display: flex;
+  transform: rotate(-90deg);
+  gap: 5px;
+}
+
+.hero-title ul li a {
+  text-decoration: none;
+  color: #828282;
+}
+
+.hero-title ul li a:hover {
+  color: black;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+}
+
+.menu-btn-open {
+  display: none;
+  width: 35px;
+  height: 20px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: translateX(100%);
+  transition: transform .5s ease-in-out;
+}
+
+.is-open {
+  transform: translateX(0);
+}
+
+.menu-btn-close {
+  position: absolute;
+  top: 67px;
+  right: 30px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-list {
+  display: grid;
+  gap: 65px;
+  margin: 65px auto 150px 25px;
+  font-weight: var(--font-weight-bold);
+  font-size: 34px;
+  line-height: 41px;
+}
+
+.mobile-menu-list:hover {
+  cursor: pointer;
+  color: #090909;
+}
+
+.lang-list-mobile {
+  display: flex;
+  transform: rotate(90deg);
+  gap: 5px;
+  width: max-content;
+  font-weight: var(--font-weight-bold);
+  font-size: 34px;
+  position: absolute;
+  right: -20px;
+}
+
+.hero-title-mobile ul li a:hover {
+  color: black;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+}
+
+.hero-container picture,
+.hero-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
 }
 
 /* ABOUT ME */
@@ -223,13 +336,13 @@ hr {
   display: grid;
   justify-content: center;
   align-content: center;
+  margin: 0 auto;
 }
 
 .container__info {
   display: grid;
   align-content: center;
   gap: 30px;
-  width: 480px;
 }
 
 .about-me-section h2 {
@@ -247,7 +360,7 @@ hr {
 
 /* SKILLS */
 .skills-section {
-  height: 565px;
+  min-height: auto;
 }
 
 .skills-section .container {
@@ -273,7 +386,8 @@ hr {
 .skills-section ul {
   display: flex;
   justify-content: center;
-  gap: 100px;
+  flex-wrap: wrap;
+  gap: 50px;
   margin-bottom: 100px;
 }
 
@@ -402,6 +516,60 @@ footer .container {
   color: #828282;
 }
 
-footer svg:hover{
+footer svg:hover {
   opacity: 0.5;
+}
+
+@media only screen and (max-width: 375px) {
+
+  header {
+    display: none;
+  }
+
+  .hero-section {
+    margin-top: 65px;
+    height: 100%;
+  }
+
+  .hero-title {
+    display: grid !important;
+    gap: 25px !important;
+  }
+
+  .lang-list {
+    display: none !important;
+  }
+
+  .menu-btn-open {
+    display: block !important;
+  }
+
+  .skills-section {
+    height: 100%;
+    margin-bottom: 100px;
+  }
+
+  .skills-section ul {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .skills-section li {
+    justify-content: center;
+  }
+
+  .portfolio-section {
+    height: 100%;
+  }
+
+  .portfolio-section article {
+    height: auto;
+    align-content: center;
+    gap: 35px;
+  }
+
+  .article-last {
+    margin-bottom: 80px;
+  }
+
 }
